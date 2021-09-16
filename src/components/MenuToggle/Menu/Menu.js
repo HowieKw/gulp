@@ -1,23 +1,33 @@
 import React from 'react';
 import { bool } from 'prop-types';
 import { StyledMenu } from './Menu.styled';
+import { NavLink } from "react-router-dom";
 
 const Menu = ({ open }) => {
 
   return (
     <StyledMenu open={open}>
-      <a href="/">
-        <span role="img" aria-label="home"></span>
-        Home
-      </a>
-      <a href="/">
-        <span role="img" aria-label="restaurants"></span>
-        Restaurants
-        </a>
-      <a href="/">
-        <span role="img" aria-label="login"></span>
-        Login/Signup
-        </a>
+      <nav>
+
+        <NavLink exact to="/">
+          Home
+        </NavLink>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <NavLink exact to="/Restaurants">
+          Restaurants
+        </NavLink>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <NavLink exact to="/">
+          Login/Signup
+        </NavLink>
+
+      </nav>
     </StyledMenu>
   )
 }

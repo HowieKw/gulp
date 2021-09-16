@@ -1,18 +1,44 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { Route, Switch } from 'react-router-dom';
 import { useOnClickOutside } from '../hooks';
 import { Burger, Menu } from './MenuToggle';
+import Home from './Home';
+import Nightmode from './Nightmode';
+import Restaurant from './Restaurants';
 
-const Gulp = () => {
+const Gulp = ({ themeToggler, theme }) => {
     const [open, setOpen] = useState(false);
+    const [restaurants, setRestaurants] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9292/restaurants')
+        .then(resp => resp.json())
+        .then(restaurantData => setRestaurants(restaurantData))
+      }, []);
 
     const node = useRef(); 
     useOnClickOutside(node, () => setOpen(false));
 
     return(
+        
+        <>
         <div ref={node}>
             <Burger open={open} setOpen={setOpen}/>
             <Menu open={open} setOpen={setOpen}/>
         </div>
+        
+        <div>
+            <Nightmode theme={theme} themeToggler={themeToggler} />
+        </div>
+
+        <div>
+            <Switch>
+                <Route path="/Restaurants" component={() => <Restaurant restaurants={restaurants}/>} />
+
+                <Route path="/" component={() => <Home />} />
+            </Switch>
+        </div>
+        </>
     )
 }
 
