@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './globalstyling';
 import { lightTheme, darkTheme } from './theme';

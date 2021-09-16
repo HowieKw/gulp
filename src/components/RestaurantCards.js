@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-// import { RenderCards, Card } from "../theme";
+import { P } from "../theme";
 
 const RestaurantCards = ({ restaurant }) => {
     const { name, category, price, id } = restaurant
+
+    let path = `/Restaurants/${id}`
 
     return(
         <div className="cards">
@@ -14,6 +16,11 @@ const RestaurantCards = ({ restaurant }) => {
                     {category}
                 </h3>
                     {price}
+                <P>
+                    <Link to={path}>
+                        See more
+                    </Link>
+                </P>
             </li>
         </div>
     )

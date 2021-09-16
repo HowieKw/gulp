@@ -25,6 +25,10 @@ export const lightTheme = {
     top: 0px;
   `;
 
+  export const P = styled.p`
+    text-align: center;
+  `;
+
   // export const RenderCards = styled.li`
   //   height: 10vh;
   //   display: grid;

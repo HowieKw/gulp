@@ -5,6 +5,7 @@ import { Burger, Menu } from './MenuToggle';
 import Home from './Home';
 import Nightmode from './Nightmode';
 import Restaurant from './Restaurants';
+import RestaurantDetails from './RestaurantDetails';
 
 const Gulp = ({ themeToggler, theme }) => {
     const [open, setOpen] = useState(false);
@@ -33,6 +34,8 @@ const Gulp = ({ themeToggler, theme }) => {
 
         <div>
             <Switch>
+                <Route path="/Restaurants/:id" component={() => <RestaurantDetails />} />
+
                 <Route path="/Restaurants" component={() => <Restaurant restaurants={restaurants}/>} />
 
                 <Route path="/" component={() => <Home />} />
