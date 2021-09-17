@@ -50,8 +50,8 @@ const RestaurantDetails = () => {
 
 
     return(
-        <section>
-            <div>
+        <section className="details">
+            <div className="rest-details">
                 <h2>
                     {name}
                 </h2>
@@ -65,9 +65,8 @@ const RestaurantDetails = () => {
                 <p>
                     {description}
                 </p>
-
-                <div>
-                    <button></button>
+            </div>
+            <div>
                     <>
                         <Comments  
                         comments={comments}
@@ -76,7 +75,7 @@ const RestaurantDetails = () => {
                         id={id}
                         />
                     </>
-                </div>
+    
             </div>
         </section>
     )

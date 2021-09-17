@@ -24,6 +24,8 @@ const Gulp = ({ themeToggler, theme }) => {
     return(
         
         <>
+        <header className="header">
+            <h1 className="title">GULP</h1>
         <div ref={node}>
             <Burger open={open} setOpen={setOpen}/>
             <Menu open={open} setOpen={setOpen}/>
@@ -32,11 +34,12 @@ const Gulp = ({ themeToggler, theme }) => {
         <div>
             <Nightmode theme={theme} themeToggler={themeToggler} />
         </div>
+        </header>
 
         <div>
             <Switch>
                 <Route path="/Login-Signup" component={() => <SignupForm />} />
-
+            
                 <Route path="/Restaurants/:id" component={() => <RestaurantDetails />} />
 
                 <Route path="/Restaurants" component={() => <Restaurant restaurants={restaurants}/>} />

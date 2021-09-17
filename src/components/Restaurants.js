@@ -11,7 +11,7 @@ const Restaurant = ({ restaurants }) => {
         )
 
     return(
-        <section>
+        <section className="restaurants">
             {displayRestaurants}
         </section>
     )

@@ -28,21 +28,26 @@
   color: #61dafb;
 }
 
-.cards {
+.restaurants {
+  box-sizing: border-box;
   margin: 0 auto;
   list-style: none;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
+  display: flex;
+  padding: 5px;
+
 }
 
-.card {
+.cards {
   display: grid;
   grid-template-rows: auto 1fr auto;
   position: relative;
   border: 2px solid;
-  background: #3692c7 100%;
+  background: #005780 100%;
+  border-radius: 10px;
 }
 
 a {
@@ -54,7 +59,66 @@ video {
   width: 20%;
   height: 90%;
   top: 10%;
-  right: 5%;
+  left: 38.5%;
   position: absolute;
   z-index: -1;
+}
+
+.banner {
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10%;
+  font-size: 160%;
+}
+
+section.details {
+  width: 500px;
+   height: 100px;
+   position: absolute;
+   margin: auto;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 50%;
+}
+
+.header {
+  padding-bottom: 150px;
+}
+
+div.sign{
+  width: 500px;
+  height: 100px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 50%;
+  border: 10px solid;
+}
+
+.comment {
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.rest-details {
+  padding: 1rem;
+  border-width: 3px;
+  border-style: solid;
+  border-image: 
+    linear-gradient(
+      to bottom, 
+      rgb(25, 0, 255), 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+
+}
+
+.title {
+  position: absolute;
+  left: 46%;
+  font-size: 50px;
 }

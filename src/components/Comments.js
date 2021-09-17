@@ -5,7 +5,7 @@ import CommentCard from "../CommentCard";
 const Comments = ({ comments, id, addComment, deleteComment }) => {
     const [rating, setRating] = useState("1");
     const [comment, setComment] = useState("");
-    const [user, setUser] = useState(9);
+    const [user, setUser] = useState(3);
     const [restId, setRestId] = useState(id)
 
     
@@ -14,14 +14,14 @@ const Comments = ({ comments, id, addComment, deleteComment }) => {
   
 
     function handleSubmit(e) {
-        e.preventDefault()
         addComment({restaurant_id: restId, user_id: user, rating, comment})
+        setComment("")
     }
 
 
     return(
 
-        <section>
+        <section className="comments">
         <hr></hr>
         
         Rating: <select className="ui dropdown"
@@ -51,7 +51,8 @@ const Comments = ({ comments, id, addComment, deleteComment }) => {
           <button className = 'submit'type="submit" > Submit</button>
         </form>
 
-        <h2 className="title">Comments</h2>
+        <h2 className="subtitle">Comments</h2>
+        <br></br>
         <div className="comments">
             {comments.map(com => 
             <CommentCard

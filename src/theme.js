@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const lightTheme = {
     primaryDark: 'papayawhip',
-    primaryLight: '#CE882C',
+    primaryLight: '#e26d5c',
     primaryHover: '#343078',
     mobile: '576px',
   };
