@@ -40,8 +40,14 @@ const RestaurantDetails = () => {
     }
 
 
-    // const newCommentArray = [newComment, ...comments];
-    //     setComments(newCommentArray);
+    function deleteComment(comId) {
+        fetch(`http://localhost:9292/reviews/${comId}`, {
+            method: 'DELETE'
+        })
+        let remainCom = comments.filter(comment => comment.id !== comId)
+        setComments([...remainCom])
+    }
+
 
     return(
         <section>
@@ -66,6 +72,7 @@ const RestaurantDetails = () => {
                         <Comments  
                         comments={comments}
                         addComment={handleAddComment}
+                        deleteComment={deleteComment}
                         id={id}
                         />
                     </>

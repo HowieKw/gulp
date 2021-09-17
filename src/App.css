@@ -44,3 +44,17 @@
   border: 2px solid;
   background: #3692c7 100%;
 }
+
+a {
+  text-decoration: none;
+}
+
+video {
+  object-fit: auto;
+  width: 20%;
+  height: 90%;
+  top: 10%;
+  right: 5%;
+  position: absolute;
+  z-index: -1;
+}

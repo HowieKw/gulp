@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import { useHistory } from "react-router-dom";
 import CommentCard from "../CommentCard";
 
-const Comments = ({ comments, id, addComment }) => {
+const Comments = ({ comments, id, addComment, deleteComment }) => {
     const [rating, setRating] = useState("1");
     const [comment, setComment] = useState("");
     const [user, setUser] = useState(9);
@@ -53,12 +53,13 @@ const Comments = ({ comments, id, addComment }) => {
 
         <h2 className="title">Comments</h2>
         <div className="comments">
-            {comments.map((com) => 
+            {comments.map(com => 
             <CommentCard
-            key={com.id}
+            com_id={com.id}
             user={com.username}
             comment={com.comment}
             rating={com.rating}
+            deleteComment={deleteComment}
             />
         )}
         </div>

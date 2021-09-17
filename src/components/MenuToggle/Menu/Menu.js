@@ -23,7 +23,7 @@ const Menu = ({ open }) => {
         <br></br>
         <br></br>
         <br></br>
-        <NavLink exact to="/">
+        <NavLink exact to="/Login-Signup">
           Login/Signup
         </NavLink>
 
